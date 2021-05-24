@@ -7,6 +7,7 @@ const UPDATE_MIN_SAUSAGES_ACTION_TYPE = "filters/update-min-sausages"
 const UPDATE_MAX_SAUSAGES_ACTION_TYPE = "filters/update-max-sausages"
 const UPDATE_MIN_RUFFALOS_ACTION_TYPE = "filters/update-min-ruffalos"
 const UPDATE_MAX_RUFFALOS_ACTION_TYPE = "filters/update-max-ruffalos"
+const RESET_FILTERS_ACTION_TYPE = "filters/reset"
 const UPDATE_FILTERS_ACTION_TYPES_AND_ATTRIBUTE = {
     [UPDATE_QUERY_ACTION_TYPE]: 'query',
     [UPDATE_MIN_SAUSAGES_ACTION_TYPE]: 'minSausages',
@@ -25,23 +26,30 @@ export const updateMinSausagesFilter = updateFilter(UPDATE_MIN_SAUSAGES_ACTION_T
 export const updateMaxSausagesFilter = updateFilter(UPDATE_MAX_SAUSAGES_ACTION_TYPE)
 export const updateMinRuffalosFilter = updateFilter(UPDATE_MIN_RUFFALOS_ACTION_TYPE)
 export const updateMaxRuffalosFilter = updateFilter(UPDATE_MAX_RUFFALOS_ACTION_TYPE)
+export const resetFilters = { type: RESET_FILTERS_ACTION_TYPE }
+
+const defaultFilterState = {
+    query: '',
+    minSausages: 0,
+    maxSausages: 5,
+    minRuffalos: 0,
+    maxRuffalos: 5,
+}
 
 const initialFilterState = (() => {
     const queryState = queryString.parse(window.location.search)
     return {
-        ...{
-            query: '',
-            minSausages: 0,
-            maxSausages: 5,
-            minRuffalos: 0,
-            maxRuffalos: 5,
-        }, 
+        ...defaultFilterState, 
         ...queryState
     }
 })()
 
 function filterReducer(state = initialFilterState, action) {
-    const field = UPDATE_FILTERS_ACTION_TYPES_AND_ATTRIBUTE[action.type];
+    const actionType = action.type
+    if (actionType === RESET_FILTERS_ACTION_TYPE) {
+        return defaultFilterState
+    }
+    const field = UPDATE_FILTERS_ACTION_TYPES_AND_ATTRIBUTE[actionType];
     if (field) {
         return { ...state, [field]: action.value }
     }
@@ -60,8 +68,9 @@ function datasetReducer(state = {
                 loaded: true,
                 values: action.value
             }
+        default:
+            return state
     }
-    return state
 }
 
 const rootReducer = combineReducers({

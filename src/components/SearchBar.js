@@ -6,6 +6,7 @@ import {
     updateMaxSausagesFilter, 
     updateMinRuffalosFilter, 
     updateMaxRuffalosFilter,
+    resetFilters,
     selectFilters
 } from '../store'
 
@@ -24,6 +25,7 @@ export default function SearchBar() {
             <ScoreInput value={filters.maxSausages} onChange={dispathValueChangeEventFor(updateMaxSausagesFilter)} />
             Ruffalos: <ScoreInput value={filters.minRuffalos} onChange={dispathValueChangeEventFor(updateMinRuffalosFilter)} /> to 
             <ScoreInput value={filters.maxRuffalos} onChange={dispathValueChangeEventFor(updateMaxRuffalosFilter)} />
+            <input type="button" value="Reset" onClick={() => dispatch(resetFilters)} />
         </div>
     )
 }
