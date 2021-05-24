@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import * as queryString from 'query-string'
+import { composeWithDevTools } from "redux-devtools-extension"
 
 const UPDATE_QUERY_ACTION_TYPE = "filters/update-query"
 const UPDATE_MIN_SAUSAGES_ACTION_TYPE = "filters/update-min-sausages"
@@ -58,4 +59,9 @@ const historyUpdateMiddleware = storeAPI => next => action => {
     return result
 }
 
-export const store = createStore(rootReducer, applyMiddleware(historyUpdateMiddleware))
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(historyUpdateMiddleware)))
+
+export const selectFilters = state => state.filters
+export const selectResults = state => []
+
+// TODO if this gets more complex then add https://redux.js.org/recipes/configuring-your-store#simplifying-setup-with-redux-toolkit

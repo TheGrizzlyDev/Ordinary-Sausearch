@@ -5,13 +5,14 @@ import {
     updateMinSausagesFilter, 
     updateMaxSausagesFilter, 
     updateMinRuffalosFilter, 
-    updateMaxRuffalosFilter 
+    updateMaxRuffalosFilter,
+    selectFilters
 } from '../store'
 
 const ScoreInput = (props) => (<input type="number" max="5" min="0" {...props} />)
 
 export default function SearchBar() {
-    const filters = useSelector(state => state.filters)
+    const filters = useSelector(selectFilters)
     const dispatch = useDispatch()
     const withUpdateEvent = (callback) => e => callback(e.target.value)
     const dispathValueChangeEventFor = (actionGenerator) => withUpdateEvent(val => dispatch(actionGenerator(val)))
@@ -23,7 +24,6 @@ export default function SearchBar() {
             <ScoreInput value={filters.maxSausages} onChange={dispathValueChangeEventFor(updateMaxSausagesFilter)} />
             Ruffalos: <ScoreInput value={filters.minRuffalos} onChange={dispathValueChangeEventFor(updateMinRuffalosFilter)} /> to 
             <ScoreInput value={filters.maxRuffalos} onChange={dispathValueChangeEventFor(updateMaxRuffalosFilter)} />
-
         </div>
     )
 }
