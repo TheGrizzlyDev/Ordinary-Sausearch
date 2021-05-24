@@ -48,8 +48,25 @@ function filterReducer(state = initialFilterState, action) {
     return state
 }
 
+const DATASET_LOAD_ACTION_TYPE = "dataset/load"
+
+function datasetReducer(state = {
+    loaded: false,
+    values: []
+}, action) {
+    switch (action.type) {
+        case DATASET_LOAD_ACTION_TYPE:
+            return {
+                loaded: true,
+                values: action.value
+            }
+    }
+    return state
+}
+
 const rootReducer = combineReducers({
-    'filters': filterReducer
+    'filters': filterReducer,
+    'dataset': datasetReducer
 })
 
 const historyUpdateMiddleware = storeAPI => next => action => {
@@ -60,8 +77,15 @@ const historyUpdateMiddleware = storeAPI => next => action => {
 }
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(historyUpdateMiddleware)))
+fetch(process.env.PUBLIC_URL + '/dataset.json').then(res => res.json()).then(json => store.dispatch({
+    type: DATASET_LOAD_ACTION_TYPE,
+    value: json
+}))
 
 export const selectFilters = state => state.filters
-export const selectResults = state => []
+export const selectResults = state => state.dataset.values
+    .filter(sausage => sausage.name.toLowerCase().includes(state.filters.query.toLowerCase()))
+    .filter(sausage => sausage.sausages >= state.filters.minSausages && sausage.sausages <= state.filters.maxSausages)
+    .filter(sausage => (sausage.ruffalos || 0) >= state.filters.minRuffalos && (sausage.ruffalos || 0) <= state.filters.maxRuffalos)
 
 // TODO if this gets more complex then add https://redux.js.org/recipes/configuring-your-store#simplifying-setup-with-redux-toolkit
