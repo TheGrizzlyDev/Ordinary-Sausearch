@@ -1,12 +1,28 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { 
+    updateQueryFilter, 
+    updateMinSausagesFilter, 
+    updateMaxSausagesFilter, 
+    updateMinRuffalosFilter, 
+    updateMaxRuffalosFilter 
+} from '../store'
 
+const ScoreInput = (props) => (<input type="number" max="5" min="0" {...props} />)
 
 export default function SearchBar() {
+    const filters = useSelector(state => state.filters)
+    const dispatch = useDispatch()
+    const withUpdateEvent = (callback) => e => callback(e.target.value)
+    const dispathValueChangeEventFor = (actionGenerator) => withUpdateEvent(val => dispatch(actionGenerator(val)))
+
     return (
         <div>
-            <input type="text" placeholder="Search" id="nameField" />
-            Sausages: <input type="number" value="0" max="5" min="0" /> to <input type="number" value="5" max="5" min="0" />
-            Ruffalos: <input type="number" value="0" max="5" min="0" /> to <input type="number" value="5" max="5" min="0" />
+            <input type="text" placeholder="Search" value={filters.query} onChange={dispathValueChangeEventFor(updateQueryFilter)} />
+            Sausages: <ScoreInput value={filters.minSausages} onChange={dispathValueChangeEventFor(updateMinSausagesFilter)} /> to 
+            <ScoreInput value="5" value={filters.maxSausages} onChange={dispathValueChangeEventFor(updateMaxSausagesFilter)} />
+            Ruffalos: <ScoreInput value="0" value={filters.minRuffalos} onChange={dispathValueChangeEventFor(updateMinRuffalosFilter)} /> to 
+            <ScoreInput value="5" value={filters.maxRuffalos} onChange={dispathValueChangeEventFor(updateMaxRuffalosFilter)} />
 
         </div>
     )
