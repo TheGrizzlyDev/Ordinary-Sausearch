@@ -1,0 +1,667 @@
+[
+    {
+        "name": "Big Mac Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Spaghetti and Meatballs Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Entire KFC Big Box Meal Sausage",
+        "sausages": "5"
+    },
+    {
+        "name": "Sushi Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Pizza Rolls Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Taco Bell Crunchy Taco Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Vanilla Cake Sausage 10k Milestone Special",
+        "sausages": "4"
+    },
+    {
+        "name": "St Patrick's Day Corned Beef and Cabbage Sausage",
+        "sausages": "5"
+    },
+    {
+        "name": "Vienna Sausage Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Panda Express Orange Chicken and Chow Mein Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Passover Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Easter Surprise Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Arby's Big Beef and Cheddar Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Reaction Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "McDonald's Chicken McNugget Sausage",
+        "sausages": "2,5"
+    },
+    {
+        "name": "Bloomin Onion Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "MRE Sausage Menu 7 Beef Brisket",
+        "sausages": "4"
+    },
+    {
+        "name": "Egg Roll Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Lobster Sausage",
+        "sausages": "5"
+    },
+    {
+        "name": "Water Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "100K Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Chipotle Steak Burrito Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Denny's Original Grand Slam Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Literally Just Eggs Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Beef Heart Sausage",
+        "sausages": "4"
+    },
+    {
+        "name": "Popcorn Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "MRE Sausage Livestream (Tortilla MRE)",
+        "sausages": "0"
+    },
+    {
+        "name": "Marie Calendar's Chicken Pot Pie Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Hot Dog Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "An Entire Fish Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Candy Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Panda Express Orange Chicken Sausage Redux",
+        "sausages": "3"
+    },
+    {
+        "name": "Ice Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Little Caesars $5 Hot-N-Ready Pepperoni Pizza but as a Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "New England Clam Chowder but as a Sausage",
+        "sausages": "Disqualified"
+    },
+    {
+        "name": "Chicken Tikka Masala Sausage",
+        "sausages": "5"
+    },
+    {
+        "name": "Bacon Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Air Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Subway Sausage: Special Youtube Celebrity Edition",
+        "sausages": "0"
+    },
+    {
+        "name": "Peanut Butter and Jelly Sandwich Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Grilled Ribeye Steak Sausage",
+        "sausages": "4"
+    },
+    {
+        "name": "Ice Cream Sandwich Sausage",
+        "sausages": "4"
+    },
+    {
+        "name": "McDonald's Filet-O-Fish Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "White Castle Sausage",
+        "sausages": "5"
+    },
+    {
+        "name": "Hungry-Man Salisbury Steak But As A Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Just a Brick of Cheese Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Chili Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Nuts Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Red Lobster Coconut Shrimp and Cheddar Bay Biscuit Sausage",
+        "sausages": "1,5"
+    },
+    {
+        "name": "Travis Scott Meal Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Meatloaf Sausage: King of the Loafs",
+        "sausages": "4"
+    },
+    {
+        "name": "Slim Jim Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Fried Rice Sausage Live",
+        "sausages": "4"
+    },
+    {
+        "name": "Key Lime Pie Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Fire Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Hamburger Helper Cheeseburger Macaroni Sausage",
+        "sausages": "2,5"
+    },
+    {
+        "name": "Pumpkin Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "The Bull Sausage (parents, maybe don't show your kids this one)",
+        "sausages": "2"
+    },
+    {
+        "name": "Candy Corn Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Baby Back Ribs Sausage",
+        "sausages": "4"
+    },
+    {
+        "name": "Candy Apple Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Brain Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Panera Autumn Squash Soup and Bread Bowl Sausage",
+        "sausages": "0,5"
+    },
+    {
+        "name": "Beyond Sausage Sausage Livestream",
+        "sausages": "5"
+    },
+    {
+        "name": "Blood Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "A Bag of Halloween Candy Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Pumpkin Pie Sausage Livestream",
+        "sausages": "1"
+    },
+    {
+        "name": "Pad Thai Sausage",
+        "ruffalos": "2",
+        "sausages": "4"
+    },
+    {
+        "name": "Reuben Sausage",
+        "ruffalos": "4",
+        "sausages": "4"
+    },
+    {
+        "name": "Youtube Comment Suggestions 1: Oil Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Pu Pu Platter Sausage",
+        "ruffalos": "1",
+        "sausages": "3"
+    },
+    {
+        "name": "Just a Big Ol' Pepperoni Stick Sausage",
+        "ruffalos": "4",
+        "sausages": "1"
+    },
+    {
+        "name": "Youtube Comment Suggestions 2: Butter Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Surf and Turf Sausage",
+        "ruffalos": "1",
+        "sausages": "4"
+    },
+    {
+        "name": "Corn Dog Sausage",
+        "ruffalos": "2",
+        "sausages": "3"
+    },
+    {
+        "name": "MRE Livestream: Asian Style Beef Strips",
+        "ruffalos": "5",
+        "sausages": "4"
+    },
+    {
+        "name": "A Very Moist Thanksgiving Sausage Special",
+        "sausages": "2"
+    },
+    {
+        "name": "Chicken Cordon Bleu Sausage",
+        "ruffalos": "4",
+        "sausages": "2"
+    },
+    {
+        "name": "Jalapeno Poppers Sausage",
+        "ruffalos": "1",
+        "sausages": "3"
+    },
+    {
+        "name": "Publix Chicken Tender Sub Sausage",
+        "ruffalos": "2",
+        "sausages": "1"
+    },
+    {
+        "name": "Youtube Comment Suggestions 3: Baked Bean Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "McRib Sausage",
+        "ruffalos": "5",
+        "sausages": "5"
+    },
+    {
+        "name": "Baconator Sausage",
+        "ruffalos": "0,5",
+        "sausages": "4"
+    },
+    {
+        "name": "Youtube Comment Suggestions 4: Reverse Hot Dog Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Shrimp and Vegetable Tempura Sausage",
+        "ruffalos": "5",
+        "sausages": "1"
+    },
+    {
+        "name": "Popeyes Spicy Chicken Sandwich Sausage",
+        "ruffalos": "1",
+        "sausages": "4"
+    },
+    {
+        "name": "Gingerbread House Sausage Live",
+        "sausages": "3"
+    },
+    {
+        "name": "Venison Sausage",
+        "sausages": "4,5"
+    },
+    {
+        "name": "Beef Wellington Sausage",
+        "ruffalos": "2",
+        "sausages": "5"
+    },
+    {
+        "name": "Youtube Comments Suggestions 5: Sausage Casing Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Caesar Salad Sausage",
+        "ruffalos": "5",
+        "sausages": "2"
+    },
+    {
+        "name": "500K Sausage",
+        "ruffalos": "3",
+        "sausages": "3,5"
+    },
+    {
+        "name": "Youtube Comments Suggestions 6: Mayonnaise Sausage",
+        "ruffalos": "Disqualified",
+        "sausages": "0"
+    },
+    {
+        "name": "Chicago-Style Deep Dish Pizza Sausage",
+        "ruffalos": "1",
+        "sausages": "5"
+    },
+    {
+        "name": "Gyro Sausage",
+        "sausages": "3"
+    },
+    {
+        "name": "Youtube Comments Suggestions 7: Onion Sausage",
+        "ruffalos": "5",
+        "sausages": "0"
+    },
+    {
+        "name": "BBQ Beef Brisket Sausage",
+        "ruffalos": "1",
+        "sausages": "3,5"
+    },
+    {
+        "name": "Whopper Sausage vs Impossible Whopper Sausage",
+        "ruffalos": "2",
+        "sausages": "2"
+    },
+    {
+        "name": "Youtube Comments Suggestions 8: Banana Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Chef Boyardee Beef Ravioli Sausage",
+        "ruffalos": "4",
+        "sausages": "2,5"
+    },
+    {
+        "name": "Sonic Footlong Chili Dog Sausage",
+        "ruffalos": "1",
+        "sausages": "5"
+    },
+    {
+        "name": "Cinnamon Roll Sausage",
+        "sausages": "4"
+    },
+    {
+        "name": "Shepherd's Pie Sausage",
+        "ruffalos": "2,5",
+        "sausages": "3"
+    },
+    {
+        "name": "Alligator Sausage",
+        "ruffalos": "2",
+        "sausages": "4"
+    },
+    {
+        "name": "Youtube Comments Suggestions 10: Oreo Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Full English Breakfast Sausage",
+        "ruffalos": "1",
+        "sausages": "1,5"
+    },
+    {
+        "name": "Spam Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Youtube Comments Suggestions 11: Garlic Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Lasagna Sausage",
+        "ruffalos": "3",
+        "sausages": "1,5"
+    },
+    {
+        "name": "Panda Express Broccoli Beef Sausage",
+        "ruffalos": "5",
+        "sausages": "2,5"
+    },
+    {
+        "name": "Youtube Comments Suggestions 12: Strawberry Poptart Sausage",
+        "sausages": "1"
+    },
+    {
+        "name": "Tuna Salad Sausage",
+        "ruffalos": "1",
+        "sausages": "2"
+    },
+    {
+        "name": "Mac and Cheese Sausage Live!",
+        "ruffalos": "4",
+        "sausages": "2"
+    },
+    {
+        "name": "Spicy McNugget Sausage",
+        "ruffalos": "3",
+        "sausages": "3,5"
+    },
+    {
+        "name": "Youtube Comments Suggestions 13: Nutella Sausage",
+        "sausages": "4"
+    },
+    {
+        "name": "Snow Crab Legs Sausage",
+        "ruffalos": "0",
+        "sausages": "1"
+    },
+    {
+        "name": "Fully Loaded Baked Potato Sausage",
+        "ruffalos": "2",
+        "sausages": "3"
+    },
+    {
+        "name": "Youtube Comments Suggestions 14: Cereal Sausage",
+        "sausages": "2"
+    },
+    {
+        "name": "Jambalaya Sausage",
+        "ruffalos": "0",
+        "sausages": "3,5"
+    },
+    {
+        "name": "Youtube Comments Suggestions 15: Go-Gurt Sausage",
+        "ruffalos": "5",
+        "sausages": "0"
+    },
+    {
+        "name": "Spicy Kimchi Sausage",
+        "ruffalos": "1",
+        "sausages": "5"
+    },
+    {
+        "name": "Youtube Comments Suggestions 16: Thick Water Sausage",
+        "ruffalos": "5",
+        "sausages": "0"
+    },
+    {
+        "name": "Crunchwrap Supreme Sausage",
+        "ruffalos": "0",
+        "sausages": "1"
+    },
+    {
+        "name": "Youtube Comments Suggestions | Syrup Sausage",
+        "ruffalos": "4",
+        "sausages": "0"
+    },
+    {
+        "name": "Japanese A5 Wagyu Sausage",
+        "ruffalos": "2",
+        "sausages": "1"
+    },
+    {
+        "name": "Youtube Comments Suggestions | Donut Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Roast Duck Sausage",
+        "ruffalos": "5",
+        "sausages": "3"
+    },
+    {
+        "name": "Beef Jerky Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Youtube Comments Suggestions | Jello Sausage",
+        "sausages": "0"
+    },
+    {
+        "name": "Ratatouille Sausage",
+        "ruffalos": "3",
+        "sausages": "0"
+    },
+    {
+        "name": "Chick-Fil-A Sausage",
+        "sausages": "5"
+    },
+    {
+        "name": "Cheesecake Sausage",
+        "ruffalos": "1",
+        "sausages": "1"
+    },
+    {
+        "name": "Liver and Onions Sausage",
+        "ruffalos": "0,5",
+        "sausages": "3"
+    },
+    {
+        "name": "Grilled Cheese and Tomato Soup Sausage Live!",
+        "ruffalos": "2",
+        "sausages": "1,5"
+    },
+    {
+        "name": "Nachos Grande Sausage",
+        "ruffalos": "2",
+        "sausages": "2,5"
+    },
+    {
+        "name": "Sweet Baby Ray's BBQ Sauce Sausage",
+        "ruffalos": "6",
+        "sausages": "Disqaulified"
+    },
+    {
+        "name": "Salmon Coulibiac Sausage",
+        "ruffalos": "0",
+        "sausages": "1"
+    },
+    {
+        "name": "Long John Silvers Fried Seafood Bonanza Sausage",
+        "ruffalos": "1",
+        "sausages": "3,5"
+    },
+    {
+        "name": "Earth Sausage",
+        "ruffalos": "2",
+        "sausages": "0"
+    },
+    {
+        "name": "IKEA Swedish Meatballs Sausage",
+        "ruffalos": "4",
+        "sausages": "2,5"
+    },
+    {
+        "name": "Boston Market Sausage",
+        "ruffalos": "1",
+        "sausages": "3,5"
+    },
+    {
+        "name": "Goldfish Crackers Sausage",
+        "ruffalos": "4",
+        "sausages": "0"
+    },
+    {
+        "name": "Beef Bourguignon Sausage",
+        "ruffalos": "5",
+        "sausages": "3,5"
+    },
+    {
+        "name": "I Turned Culver's ButterBurger and Fried Cheese Curds into a Sausage",
+        "ruffalos": "0",
+        "sausages": "5"
+    },
+    {
+        "name": "Pizza Lunchables Sausage",
+        "sausages": "4"
+    },
+    {
+        "name": "Johnsonville Sausage Medley Sausage",
+        "ruffalos": "0",
+        "sausages": "5"
+    },
+    {
+        "name": "McDonald's Bacon, Egg, and Cheese McGriddle Sausage",
+        "ruffalos": "0",
+        "sausages": "5"
+    },
+    {
+        "name": "Canned Sardines Sausage",
+        "ruffalos": "5",
+        "sausages": "0"
+    },
+    {
+        "name": "A Very Moist Cookout Sausage Special",
+        "sausages": "0,5"
+    },
+    {
+        "name": "Street Tongue Tacos Sausage",
+        "ruffalos": "0",
+        "sausages": "3,5"
+    },
+    {
+        "name": "Popcorn Sausage Revisited",
+        "ruffalos": "5",
+        "sausages": "0"
+    }
+]
