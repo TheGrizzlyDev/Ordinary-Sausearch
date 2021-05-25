@@ -6,6 +6,9 @@ import {
     updateMaxSausagesFilter, 
     updateMinRuffalosFilter, 
     updateMaxRuffalosFilter,
+    updateIncludeSausageDisqualifiedFilter,
+    updateIncludeWillItBlowDisqualifiedFilter,
+    updateIncludeMissingWillItBlowFilter,
     resetFilters,
     selectFilters
 } from '../store'
@@ -15,14 +18,15 @@ const ScoreInput = (props) => (<input type="number" max="5" min="0" {...props} /
 export default function SearchBar() {
     const filters = useSelector(selectFilters)
     const dispatch = useDispatch()
-    const withUpdateEvent = (callback) => e => callback(e.target.value)
+    const withUpdateEvent = (callback) => e => callback(e.target.value) && console.log(e.target.value)
     const dispathValueChangeEventFor = (actionGenerator) => withUpdateEvent(val => dispatch(actionGenerator(val)))
 
     return (
         <div>
             <input type="text" placeholder="Search" value={filters.query} onChange={dispathValueChangeEventFor(updateQueryFilter)} />
             Sausages: <ScoreInput value={filters.minSausages} onChange={dispathValueChangeEventFor(updateMinSausagesFilter)} /> to 
-            <ScoreInput value={filters.maxSausages} onChange={dispathValueChangeEventFor(updateMaxSausagesFilter)} />
+            <ScoreInput value={filters.maxSausages} onChange={dispathValueChangeEventFor(updateMaxSausagesFilter)} /> (
+            Include disqualified - checkbox placeholder -)
             Ruffalos: <ScoreInput value={filters.minRuffalos} onChange={dispathValueChangeEventFor(updateMinRuffalosFilter)} /> to 
             <ScoreInput value={filters.maxRuffalos} onChange={dispathValueChangeEventFor(updateMaxRuffalosFilter)} />
             <input type="button" value="Reset" onClick={() => dispatch(resetFilters)} />

@@ -14,15 +14,17 @@ function App() {
         <th>Sausages</th>
         <th>Ruffalos</th>
       </thead>
+      <tbody>
       {
         results.map(({name, sausages, ruffalos}) => (
           <tr key={name}>
             <td>{name}</td>
-            <td>{sausages}</td>
+            <td>{sausages || "N/A"}</td>
             <td>{ruffalos || "N/A"}</td>
           </tr>
         ))
       }
+      </tbody>
       </table>
     </div>
   );

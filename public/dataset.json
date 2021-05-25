@@ -137,7 +137,9 @@
     },
     {
         "name": "New England Clam Chowder but as a Sausage",
-        "sausages": "Disqualified"
+        "tags": [
+            "sausage-disqualified"
+        ]
     },
     {
         "name": "Chicken Tikka Masala Sausage",
@@ -386,8 +388,10 @@
     },
     {
         "name": "Youtube Comments Suggestions 6: Mayonnaise Sausage",
-        "ruffalos": "Disqualified",
-        "sausages": 0
+        "sausages": 0,
+        "tags": [
+            "will-it-blow-disqualified"
+        ]
     },
     {
         "name": "Chicago-Style Deep Dish Pizza Sausage",
@@ -589,7 +593,9 @@
     {
         "name": "Sweet Baby Ray's BBQ Sauce Sausage",
         "ruffalos": 6,
-        "sausages": "Disqaulified"
+        "tags": [
+            "sausage-disqualified"
+        ]
     },
     {
         "name": "Salmon Coulibiac Sausage",
