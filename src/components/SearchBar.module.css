@@ -1,0 +1,11 @@
+.SearchBarContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.SearchBarFilteringContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}

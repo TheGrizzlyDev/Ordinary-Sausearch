@@ -1,0 +1,16 @@
+.App {
+    display: block;    
+    width: 60vw;
+    margin: 4em auto;
+}
+
+.Logo {
+    font-size: 8em;
+    text-align: center;
+}
+
+.ResultContainer {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid red;
+}
