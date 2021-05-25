@@ -2,6 +2,9 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import * as queryString from 'query-string'
 import { composeWithDevTools } from "redux-devtools-extension"
 
+const parseIntInRange = (min, max) => (str) => Math.min(max, Math.max(min, parseInt(str)))
+const parseScore = parseIntInRange(0, 5)
+
 const UPDATE_QUERY_ACTION_TYPE = "filters/update-query"
 const UPDATE_MIN_SAUSAGES_ACTION_TYPE = "filters/update-min-sausages"
 const UPDATE_MAX_SAUSAGES_ACTION_TYPE = "filters/update-max-sausages"
@@ -18,22 +21,22 @@ const UPDATE_FILTERS_ACTION_TYPES_AND_ATTRIBUTE = {
     },
     [UPDATE_MIN_SAUSAGES_ACTION_TYPE]: {
         field: 'minSausages',
-        converter: parseInt,
+        converter: parseScore,
         defaultValue: 0
     },
     [UPDATE_MAX_SAUSAGES_ACTION_TYPE]: {
         field: 'maxSausages',
-        converter: parseInt,
+        converter: parseScore,
         defaultValue: 5
     },
     [UPDATE_MIN_RUFFALOS_ACTION_TYPE]: {
         field: 'minRuffalos',
-        converter: parseInt,
+        converter: parseScore,
         defaultValue: 0
     },
     [UPDATE_MAX_RUFFALOS_ACTION_TYPE]: {
         field: 'maxRuffalos',
-        converter: parseInt,
+        converter: parseScore,
         defaultValue: 5
     },
     [UPDATE_INCLUDE_SAUSAGE_DISQUALIFIED_ACTION_TYPE]: {

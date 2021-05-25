@@ -14,7 +14,7 @@ import {
 } from '../store'
 import TextField from '@material-ui/core/TextField';
 import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
+import FormGroup from '@material-ui/core/FormGroup';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -28,12 +28,16 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import FilterListIcon from '@material-ui/icons/FilterList';
-import Popover from '@material-ui/core/Popover';
+import Dialog from '@material-ui/core/Dialog';
+import Slider from '@material-ui/core/Slider';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 const ScoreInput = (props) => (<input type="number" max="5" min="0" {...props} />)
 
@@ -55,39 +59,29 @@ const ScoreInput = (props) => (<input type="number" max="5" min="0" {...props} /
 
 
 function ButtonWithPopover({ renderButtonChildren, renderPopoverChildren }) {
-    const [anchorEl, setAnchorEl] = useState(null);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
     };
 
     const handleClose = () => {
-        setAnchorEl(null);
+        setOpen(false);
     };
 
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
 
     return (
         <>
-            <IconButton aria-label="delete" color="inherit" onClick={handleClick}>
+            <IconButton aria-label="delete" color="inherit" onClick={handleClickOpen}>
                 {renderButtonChildren()}
             </IconButton>
-            <Popover
-                id={id}
+            <Dialog
                 open={open}
-                anchorEl={anchorEl}
                 onClose={handleClose}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'center',
-                }}
-                transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'center',
-                }}
+                aria-labelledby="draggable-dialog-title"
             >
                 {renderPopoverChildren()}
-            </Popover>
+            </Dialog>
         </>
     )
 }
@@ -104,18 +98,7 @@ const useStyles = makeStyles((theme) => ({
     },
     search: {
         position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
-        },
-        marginRight: theme.spacing(2),
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(3),
-            width: 'auto',
-        },
+        borderRadius: theme.shape.borderRadContainer
     },
     searchIcon: {
         padding: theme.spacing(0, 2),
@@ -138,6 +121,12 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             width: '20ch',
         },
+    },
+    padding: {
+        height: `calc(56px * 2 + ${theme.spacing(2)}px)`
+    },
+    filterBox: {
+        padding: '20px',
     }
 }));
 
@@ -145,8 +134,9 @@ export default function PrimarySearchAppBar() {
     const classes = useStyles();
     const filters = useSelector(selectFilters)
     const dispatch = useDispatch()
-    const withUpdateEvent = (callback) => e => callback(e.target.value) && console.log(e.target.value)
-    const dispathValueChangeEventFor = (actionGenerator) => withUpdateEvent(val => dispatch(actionGenerator(val)))
+    const withUpdateEvent = (attr, callback) => e => callback(e.target[attr])
+    const dispathValueChangeEventFor = (actionGenerator, attr = 'value') => withUpdateEvent(attr, val => dispatch(actionGenerator(val)))
+    const dispathCheckboxChangeEventFor = (actionGenerator) => dispathValueChangeEventFor(actionGenerator, 'checked')
 
     return (
         <div className={classes.grow}>
@@ -170,13 +160,84 @@ export default function PrimarySearchAppBar() {
                             onChange={dispathValueChangeEventFor(updateQueryFilter)}
                         />
                     </div>
-                    <div className={classes.grow} />
                     <ButtonWithPopover
                         renderButtonChildren={() => (<FilterListIcon />)}
-                        renderPopoverChildren={() => (<>
-                            <Typography className={classes.typography}>The content of the Popover.</Typography>
-                        </>)}
+                        renderPopoverChildren={() => (
+                            <div classes={classes.filterBox}>
+                                <DialogTitle>Advanced filters</DialogTitle>
+                                <DialogContent>
+                                    <FormGroup column>
+                                        <TextField
+                                            label="Min sausage score"
+                                            type="number"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            value={filters.minSausages}
+                                            onChange={dispathValueChangeEventFor(updateMinSausagesFilter)}
+                                        />
+                                        <TextField
+                                            label="Max sausage score"
+                                            type="number"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            value={filters.maxSausages}
+                                            onChange={dispathValueChangeEventFor(updateMaxSausagesFilter)}
+                                        />
+                                        <TextField
+                                            label="Min Ruffalos score"
+                                            type="number"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            value={filters.minRuffalos}
+                                            onChange={dispathValueChangeEventFor(updateMinRuffalosFilter)}
+                                        />
+                                        <TextField
+                                            label="Max Ruffalos score"
+                                            type="number"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            value={filters.maxRuffalos}
+                                            onChange={dispathValueChangeEventFor(updateMaxRuffalosFilter)}
+                                        />
+                                        <FormControlLabel
+                                            control={
+                                                <Checkbox
+                                                    checked={filters.includeSausageDisqualified}
+                                                    onChange={dispathCheckboxChangeEventFor(updateIncludeSausageDisqualifiedFilter)}
+                                                    color="primary"
+                                                />
+                                            }
+                                            label="Show disqualified sausages"
+                                        />
+                                        <FormControlLabel
+                                            control={
+                                                <Checkbox
+                                                    checked={filters.includeWillItBlowDisqualified}
+                                                    onChange={dispathCheckboxChangeEventFor(updateIncludeWillItBlowDisqualifiedFilter)}
+                                                    color="primary"
+                                                />
+                                            }
+                                            label="Show disqualified 'Will it blow?'"
+                                        />
+                                        <FormControlLabel
+                                            control={
+                                                <Checkbox
+                                                    checked={filters.includeMissingWillItBlow}
+                                                    onChange={dispathCheckboxChangeEventFor(updateIncludeMissingWillItBlowFilter)}
+                                                    color="primary"
+                                                />
+                                            }
+                                            label="Show missing 'Will it blow?'"
+                                        />
+                                    </FormGroup>
+                                </DialogContent>
+                            </div>)}
                     />
+                    <div className={classes.grow} />
                 </Toolbar>
             </AppBar>
         </div>
