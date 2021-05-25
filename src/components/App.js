@@ -1,32 +1,19 @@
 import './App.css';
 import SearchBar from './SearchBar'
-import { useSelector } from 'react-redux'
-import { selectResults } from '../store'
+import SearchResults from './SearchResults'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 function App() {
-  const results = useSelector(selectResults)
   return (
-    <div className="App">
-      <SearchBar />
-      <table>
-      <thead>
-        <th>Name</th>
-        <th>Sausages</th>
-        <th>Ruffalos</th>
-      </thead>
-      <tbody>
-      {
-        results.map(({name, sausages, ruffalos}) => (
-          <tr key={name}>
-            <td>{name}</td>
-            <td>{sausages || "N/A"}</td>
-            <td>{ruffalos || "N/A"}</td>
-          </tr>
-        ))
-      }
-      </tbody>
-      </table>
-    </div>
+    <>
+    <CssBaseline />
+    <SearchBar />
+    <Container>
+      <SearchResults />
+    </Container>
+    </>
   );
 }
 
