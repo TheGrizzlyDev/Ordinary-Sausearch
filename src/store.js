@@ -143,7 +143,6 @@ export const selectFilters = state => state.filters
 export const selectResults = state => state.dataset.values
     .filter(sausage => sausage.name.toLowerCase().includes(state.filters.query.toLowerCase()))
     .filter(sausage => {
-        console.log(sausage, state.filters)
         if (sausage.tags && sausage.tags.includes("sausage-disqualified")) return state.filters.includeSausageDisqualified
         return sausage.sausages >= state.filters.minSausages && sausage.sausages <= state.filters.maxSausages
     })
