@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     padding: {
-        height: `calc(56px * 2 + ${theme.spacing(2)}px)`
+        height: `calc(56px + ${theme.spacing(2)}px)`
     },
     filterBox: {
         padding: '20px',
@@ -140,7 +140,8 @@ export default function PrimarySearchAppBar() {
 
     return (
         <div className={classes.grow}>
-            <AppBar position="static">
+            <div className={classes.padding}/>
+            <AppBar position="fixed">
                 <Toolbar>
                     <Typography className={classes.title} variant="h6" noWrap>
                         Ordinary Sausearch
