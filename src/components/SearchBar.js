@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
     updateQueryFilter,
@@ -21,6 +21,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
+import ShareIcon from '@material-ui/icons/Share';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FilterListIcon from '@material-ui/icons/FilterList';
@@ -30,9 +31,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
+import copy from 'copy-to-clipboard';
+import Snackbar from '@material-ui/core/Snackbar';
 
 function ButtonWithPopup({ renderButtonChildren, renderPopupChildren }) {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -57,6 +60,45 @@ function ButtonWithPopup({ renderButtonChildren, renderPopupChildren }) {
             </Dialog>
         </>
     )
+}
+
+function ShareButton() {
+    const [nativeShare, setNativeShare] = useState(false)
+    useEffect(() => {
+        setNativeShare(!!window.navigator.share)
+    }, [])
+    const [showCopiedBanner, setShowCopiedBanner] = useState(false)
+
+    const handleClickOpen = () => {
+        const url = window.location.href
+        if (nativeShare) {
+            navigator.share({
+                title: 'Ordinary Sausearch',
+                url
+            }).catch(console.error)
+            return
+        }
+        console.log(url)
+        copy(url)
+        setShowCopiedBanner(true)
+    }
+
+    return (
+            <IconButton aria-label="delete" color="inherit" onClick={handleClickOpen}>
+                <ShareIcon />
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                    }}
+                    open={showCopiedBanner}
+                    autoHideDuration={4000}
+                    onClose={() => setShowCopiedBanner(false)}
+                    message="URL copied to your clipboard"
+                />
+            </IconButton>
+    )
+
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -117,7 +159,7 @@ export default function PrimarySearchAppBar() {
 
     return (
         <div className={classes.grow}>
-            <div className={classes.padding}/>
+            <div className={classes.padding} />
             <AppBar position="fixed">
                 <Toolbar>
                     <Avatar className={classes.logo} alt="Ordinary Sausage logo" src="https://yt3.ggpht.com/ytc/AAUvwniLLTfPjaagIQs2TsRr4kKZAM7suk5na8_qrB2B=s176-c-k-c0x00ffffff-no-rj" />
@@ -229,6 +271,7 @@ export default function PrimarySearchAppBar() {
                             </div>)}
                     />
                     <div className={classes.grow} />
+                    <ShareButton />
                 </Toolbar>
             </AppBar>
         </div>
