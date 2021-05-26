@@ -162,7 +162,7 @@ export default function PrimarySearchAppBar() {
             <div className={classes.padding} />
             <AppBar position="fixed">
                 <Toolbar>
-                    <Avatar className={classes.logo} alt="Ordinary Sausage logo" src="https://yt3.ggpht.com/ytc/AAUvwniLLTfPjaagIQs2TsRr4kKZAM7suk5na8_qrB2B=s176-c-k-c0x00ffffff-no-rj" />
+                    <Avatar className={classes.logo} alt="Ordinary Sausage logo" src={process.env.PUBLIC_URL + "/logo.png"} />
 
                     <Typography className={classes.title} variant="h6" noWrap>
                         Ordinary Sausearch
