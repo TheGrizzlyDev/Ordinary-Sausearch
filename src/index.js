@@ -5,7 +5,6 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import { store } from './store'
-import ReactGA from 'react-ga';
 
 const renderApp = () => render(
   <React.StrictMode>
@@ -22,14 +21,18 @@ if (isDev && module.hot) {
   module.hot.accept('./components/App', renderApp)
 }
 
-renderApp()
+if (! isDev) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-ReactGA.initialize('G-8S3Z9M64CQ', {
-  debug: isDev
-});
-ReactGA.pageview(window.location.pathname + window.location.search);
+  gtag('config', 'G-8S3Z9M64CQ');
+}
+
+renderApp()
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals()
