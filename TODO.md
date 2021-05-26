@@ -1,7 +1,5 @@
 # MVP Essentials
 * Download as CSV/JSON
-* Add share URL button (ez win)
-* Add google analytics
 * Improve readme
 * Add contribution guide
 
