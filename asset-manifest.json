@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Ordinary-Sausearch/static/css/main.ea1455b2.chunk.css",
-    "main.js": "/Ordinary-Sausearch/static/js/main.78500451.chunk.js",
-    "main.js.map": "/Ordinary-Sausearch/static/js/main.78500451.chunk.js.map",
+    "main.js": "/Ordinary-Sausearch/static/js/main.cbf78312.chunk.js",
+    "main.js.map": "/Ordinary-Sausearch/static/js/main.cbf78312.chunk.js.map",
     "runtime-main.js": "/Ordinary-Sausearch/static/js/runtime-main.523f8c14.js",
     "runtime-main.js.map": "/Ordinary-Sausearch/static/js/runtime-main.523f8c14.js.map",
     "static/js/2.140a1dc0.chunk.js": "/Ordinary-Sausearch/static/js/2.140a1dc0.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.523f8c14.js",
     "static/js/2.140a1dc0.chunk.js",
     "static/css/main.ea1455b2.chunk.css",
-    "static/js/main.78500451.chunk.js"
+    "static/js/main.cbf78312.chunk.js"
   ]
 }
