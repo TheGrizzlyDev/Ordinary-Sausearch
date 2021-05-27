@@ -139,9 +139,11 @@ fetch(process.env.PUBLIC_URL + '/dataset.json').then(res => res.json()).then(jso
     value: json
 }))
 
+const removeSpecialChars = (query) => query.replace(/\W/g, '')
+
 export const selectFilters = state => state.filters
 export const selectResults = state => state.dataset.values
-    .filter(sausage => sausage.name.toLowerCase().includes(state.filters.query.toLowerCase()))
+    .filter(sausage => removeSpecialChars(sausage.name.toLowerCase()).includes(removeSpecialChars(state.filters.query.toLowerCase())))
     .filter(sausage => {
         if (sausage.tags && sausage.tags.includes("sausage-disqualified")) return state.filters.includeSausageDisqualified
         return sausage.sausages >= state.filters.minSausages && sausage.sausages <= state.filters.maxSausages
