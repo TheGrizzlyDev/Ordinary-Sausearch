@@ -10,7 +10,8 @@ import {
     updateIncludeWillItBlowDisqualifiedFilter,
     updateIncludeMissingWillItBlowFilter,
     resetFilters,
-    selectFilters
+    selectFilters,
+    selectResults
 } from '../store'
 import TextField from '@material-ui/core/TextField';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -22,6 +23,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import ShareIcon from '@material-ui/icons/Share';
+import DownloadIcon from '@material-ui/icons/CloudDownload';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FilterListIcon from '@material-ui/icons/FilterList';
@@ -33,6 +35,7 @@ import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
 import copy from 'copy-to-clipboard';
 import Snackbar from '@material-ui/core/Snackbar';
+import * as download from 'js-file-download'
 
 function ButtonWithPopup({ renderButtonChildren, renderPopupChildren }) {
     const [open, setOpen] = useState(false);
@@ -95,6 +98,33 @@ function ShareButton() {
                     autoHideDuration={4000}
                     onClose={() => setShowCopiedBanner(false)}
                     message="URL copied to your clipboard"
+                />
+            </IconButton>
+    )
+
+}
+
+function DownloadButton() {
+    const results = useSelector(selectResults)
+    const [showCopiedBanner, setShowCopiedBanner] = useState(false)
+
+    const handleClickOpen = () => {
+        download(JSON.stringify(results), 'sausages.json')
+        setShowCopiedBanner(true)
+    }
+
+    return (
+            <IconButton aria-label="delete" color="inherit" onClick={handleClickOpen}>
+                <DownloadIcon />
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                    }}
+                    open={showCopiedBanner}
+                    autoHideDuration={4000}
+                    onClose={() => setShowCopiedBanner(false)}
+                    message="Search results downloaded"
                 />
             </IconButton>
     )
@@ -272,6 +302,7 @@ export default function PrimarySearchAppBar() {
                     />
                     <div className={classes.grow} />
                     <ShareButton />
+                    <DownloadButton />
                 </Toolbar>
             </AppBar>
         </div>
