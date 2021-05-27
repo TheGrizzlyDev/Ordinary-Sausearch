@@ -13,7 +13,34 @@ const useStyles = makeStyles({
     table: {
         minWidth: 650,
     },
+    tableRow: {
+        height: 64,
+    }
 });
+
+const Sausage = () => {
+    return '🌭'
+}
+
+const Ruffalo = () => {
+    return <img width={24} src={`${process.env.PUBLIC_URL}/ruffalo.png`}/>
+}
+
+const SausageRating = ({rating}) => {
+    return (
+        <span>
+            {rating ? new Array(parseInt(rating)).fill().map(() => <Sausage/>) : '💩' }
+        </span>
+    )
+}
+
+const RuffaloRating = ({rating}) => {
+    return (
+        <span>
+            {new Array(parseInt(rating || 0)).fill().map(() => <Ruffalo/>) }
+        </span>
+    )
+}
 
 export default function SearchResults() {
     const results = useSelector(selectResults)
@@ -32,12 +59,16 @@ export default function SearchResults() {
                 </TableHead>
                 <TableBody>
                     {results.map((row) => (
-                        <TableRow key={row.name}>
+                        <TableRow className={classes.tableRow} key={row.name}>
                             <TableCell component="th" scope="row">
                                 {row.name}
                             </TableCell>
-                            <TableCell align="right">{row.sausages}</TableCell>
-                            <TableCell align="right">{row.ruffalos}</TableCell>
+                            <TableCell align="right">
+                                <SausageRating rating={row.sausages}/>
+                            </TableCell>
+                            <TableCell align="right">
+                                <RuffaloRating rating={row.ruffalos}/>
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
