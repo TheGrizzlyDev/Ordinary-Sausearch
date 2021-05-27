@@ -22,25 +22,23 @@ const Sausage = () => {
     return '🌭'
 }
 
-const Ruffalo = () => {
-    return <img width={24} src={`${process.env.PUBLIC_URL}/ruffalo.png`}/>
-}
-
-const SausageRating = ({rating}) => {
+const ratingComponentGenerator = (img) => ({rating}) => {
+    const iconSize = 24
+    const rest = rating % 1
     return (
         <span>
-            {rating ? new Array(parseInt(rating)).fill().map(() => <Sausage/>) : '💩' }
+            {(!! rating) && new Array(parseInt(rating)).fill().map(() => <img width={iconSize} src={img}/>) }
+            {(rest > 0) && <img width={iconSize} height={Math.round(iconSize * rest)} src={img} style={{
+                objectFit: 'cover',
+                objectPosition: '0% 100%'
+            }}/>}
         </span>
     )
 }
 
-const RuffaloRating = ({rating}) => {
-    return (
-        <span>
-            {new Array(parseInt(rating || 0)).fill().map(() => <Ruffalo/>) }
-        </span>
-    )
-}
+const SausageRating = ratingComponentGenerator(`${process.env.PUBLIC_URL}/sausage.png`)
+
+const RuffaloRating = ratingComponentGenerator(`${process.env.PUBLIC_URL}/ruffalo.png`)
 
 export default function SearchResults() {
     const results = useSelector(selectResults)
