@@ -23,8 +23,8 @@ const ratingComponentGenerator = (img) => ({rating}) => {
     const rest = rating % 1
     return (
         <span>
-            {(!! rating) && new Array(parseInt(rating)).fill().map(() => <img width={iconSize} src={img}/>) }
-            {(rest > 0) && <img width={iconSize} height={Math.round(iconSize * rest)} src={img} style={{
+            {(!! rating) && new Array(parseInt(rating)).fill().map(() => <img alt="" width={iconSize} src={img}/>) }
+            {(rest > 0) && <img alt="" width={iconSize} height={Math.round(iconSize * rest)} src={img} style={{
                 objectFit: 'cover',
                 objectPosition: '0% 100%'
             }}/>}
