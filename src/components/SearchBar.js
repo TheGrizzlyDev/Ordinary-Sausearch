@@ -27,6 +27,7 @@ import DownloadIcon from '@material-ui/icons/CloudDownload';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import InfoIcon from '@material-ui/icons/Info';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -64,6 +65,27 @@ function ButtonWithPopup({ renderButtonChildren, renderPopupChildren }) {
         </>
     )
 }
+
+const InfoButton = () => (
+    <ButtonWithPopup
+        renderButtonChildren={() => <InfoIcon />}
+        renderPopupChildren={close => (
+            <>
+            <DialogTitle>Info</DialogTitle>
+            <DialogContent>
+                <Typography>
+                    Any kind of contribution is welcome, so feel free to reach out to us on <a href="https://github.com/TheGrizzlyDev/Ordinary-Sausearch">Github</a>
+                </Typography>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={close} color="primary">
+                    Close
+                </Button>
+            </DialogActions>
+            </>
+        )}
+    />
+)
 
 function ShareButton() {
     const [nativeShare, setNativeShare] = useState(false)
@@ -303,6 +325,7 @@ export default function PrimarySearchAppBar() {
                     <div className={classes.grow} />
                     <ShareButton />
                     <DownloadButton />
+                    <InfoButton />
                 </Toolbar>
             </AppBar>
         </div>
