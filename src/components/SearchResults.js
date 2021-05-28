@@ -18,10 +18,6 @@ const useStyles = makeStyles({
     }
 });
 
-const Sausage = () => {
-    return '🌭'
-}
-
 const ratingComponentGenerator = (img) => ({rating}) => {
     const iconSize = 24
     const rest = rating % 1
