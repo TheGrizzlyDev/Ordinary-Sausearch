@@ -206,8 +206,8 @@ export default function PrimarySearchAppBar() {
     const filters = useSelector(selectFilters)
     const dispatch = useDispatch()
     const withUpdateEvent = (attr, callback) => e => callback(e.target[attr])
-    const dispathValueChangeEventFor = (actionGenerator, attr = 'value') => withUpdateEvent(attr, val => dispatch(actionGenerator(val)))
-    const dispathCheckboxChangeEventFor = (actionGenerator) => dispathValueChangeEventFor(actionGenerator, 'checked')
+    const dispatchValueChangeEventFor = (actionGenerator, attr = 'value') => withUpdateEvent(attr, val => dispatch(actionGenerator(val)))
+    const dispatchCheckboxChangeEventFor = (actionGenerator) => dispatchValueChangeEventFor(actionGenerator, 'checked')
 
     return (
         <div className={classes.grow}>
@@ -231,7 +231,7 @@ export default function PrimarySearchAppBar() {
                             }}
                             inputProps={{ 'aria-label': 'search' }}
                             value={filters.query}
-                            onChange={dispathValueChangeEventFor(updateQueryFilter)}
+                            onChange={dispatchValueChangeEventFor(updateQueryFilter)}
                         />
                     </div>
                     <ButtonWithPopup
@@ -248,7 +248,7 @@ export default function PrimarySearchAppBar() {
                                                 shrink: true,
                                             }}
                                             value={filters.minSausages}
-                                            onChange={dispathValueChangeEventFor(updateMinSausagesFilter)}
+                                            onChange={dispatchValueChangeEventFor(updateMinSausagesFilter)}
                                         />
                                         <TextField
                                             label="Max sausage score"
@@ -257,7 +257,7 @@ export default function PrimarySearchAppBar() {
                                                 shrink: true,
                                             }}
                                             value={filters.maxSausages}
-                                            onChange={dispathValueChangeEventFor(updateMaxSausagesFilter)}
+                                            onChange={dispatchValueChangeEventFor(updateMaxSausagesFilter)}
                                         />
                                         <TextField
                                             label="Min Ruffalos score"
@@ -266,7 +266,7 @@ export default function PrimarySearchAppBar() {
                                                 shrink: true,
                                             }}
                                             value={filters.minRuffalos}
-                                            onChange={dispathValueChangeEventFor(updateMinRuffalosFilter)}
+                                            onChange={dispatchValueChangeEventFor(updateMinRuffalosFilter)}
                                         />
                                         <TextField
                                             label="Max Ruffalos score"
@@ -275,13 +275,13 @@ export default function PrimarySearchAppBar() {
                                                 shrink: true,
                                             }}
                                             value={filters.maxRuffalos}
-                                            onChange={dispathValueChangeEventFor(updateMaxRuffalosFilter)}
+                                            onChange={dispatchValueChangeEventFor(updateMaxRuffalosFilter)}
                                         />
                                         <FormControlLabel
                                             control={
                                                 <Checkbox
                                                     checked={filters.includeSausageDisqualified}
-                                                    onChange={dispathCheckboxChangeEventFor(updateIncludeSausageDisqualifiedFilter)}
+                                                    onChange={dispatchCheckboxChangeEventFor(updateIncludeSausageDisqualifiedFilter)}
                                                     color="primary"
                                                 />
                                             }
@@ -291,7 +291,7 @@ export default function PrimarySearchAppBar() {
                                             control={
                                                 <Checkbox
                                                     checked={filters.includeWillItBlowDisqualified}
-                                                    onChange={dispathCheckboxChangeEventFor(updateIncludeWillItBlowDisqualifiedFilter)}
+                                                    onChange={dispatchCheckboxChangeEventFor(updateIncludeWillItBlowDisqualifiedFilter)}
                                                     color="primary"
                                                 />
                                             }
@@ -301,7 +301,7 @@ export default function PrimarySearchAppBar() {
                                             control={
                                                 <Checkbox
                                                     checked={filters.includeMissingWillItBlow}
-                                                    onChange={dispathCheckboxChangeEventFor(updateIncludeMissingWillItBlowFilter)}
+                                                    onChange={dispatchCheckboxChangeEventFor(updateIncludeMissingWillItBlowFilter)}
                                                     color="primary"
                                                 />
                                             }
